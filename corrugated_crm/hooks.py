@@ -68,6 +68,17 @@ fixtures = [
             ]]
         ]
     },
+    # ── CRM Fields Layout: adds Corrugated Specs / Print / Files sections ──────
+    # Controls which fields appear in the CRM Lead/Deal Data tab
+    {
+        "doctype": "CRM Fields Layout",
+        "filters": [
+            ["name", "in", [
+                "CRM Lead-Data Fields",
+                "CRM Deal-Data Fields",
+            ]]
+        ]
+    },
 ]
 
 # ── Included in every Frappe Desk page ────────────────────────────────────────

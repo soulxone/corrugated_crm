@@ -1,0 +1,16 @@
+[
+  {
+    "doctype": "CRM Fields Layout",
+    "name": "CRM Lead-Data Fields",
+    "dt": "CRM Lead",
+    "type": "Data Fields",
+    "layout": "[{\"label\":\"Details\",\"name\":\"details_section\",\"opened\":true,\"columns\":[{\"name\":\"column_ZgLG\",\"fields\":[\"organization\",\"industry\",\"lead_owner\"]},{\"name\":\"column_TbYq\",\"fields\":[\"website\",\"job_title\"]},{\"name\":\"column_OKSX\",\"fields\":[\"territory\",\"source\"]}]},{\"label\":\"Person\",\"name\":\"person_section\",\"opened\":true,\"columns\":[{\"name\":\"column_6c5g\",\"fields\":[\"salutation\",\"email\"]},{\"name\":\"column_1n7Q\",\"fields\":[\"first_name\",\"mobile_no\"]},{\"name\":\"column_cT6C\",\"fields\":[\"last_name\"]}]},{\"label\":\"Corrugated Specs\",\"name\":\"corrugated_specs_section\",\"opened\":true,\"columns\":[{\"name\":\"col_corr_left\",\"fields\":[\"box_style\",\"flute_type\",\"board_grade\"]},{\"name\":\"col_corr_right\",\"fields\":[\"box_length\",\"box_width\",\"box_depth\",\"annual_quantity\"]}]},{\"label\":\"Print\",\"name\":\"print_specs_section\",\"opened\":true,\"columns\":[{\"name\":\"col_print\",\"fields\":[\"num_colors\",\"print_method\",\"coating\"]}]},{\"label\":\"Files & Notes\",\"name\":\"files_notes_section\",\"opened\":true,\"columns\":[{\"name\":\"col_files\",\"fields\":[\"cad_file\",\"print_artwork\",\"spec_notes\"]}]}]"
+  },
+  {
+    "doctype": "CRM Fields Layout",
+    "name": "CRM Deal-Data Fields",
+    "dt": "CRM Deal",
+    "type": "Data Fields",
+    "layout": "[{\"label\":\"Details\",\"name\":\"details_section\",\"opened\":true,\"columns\":[{\"name\":\"column_z9XL\",\"fields\":[\"organization\",\"annual_revenue\",\"next_step\"]},{\"name\":\"column_gM4w\",\"fields\":[\"website\",\"close_date\",\"deal_owner\"]},{\"name\":\"column_gWmE\",\"fields\":[\"territory\",\"probability\"]}]},{\"label\":\"Corrugated Specs\",\"name\":\"corrugated_specs_section\",\"opened\":true,\"columns\":[{\"name\":\"col_corr_left\",\"fields\":[\"box_style\",\"flute_type\",\"board_grade\"]},{\"name\":\"col_corr_right\",\"fields\":[\"box_length\",\"box_width\",\"box_depth\",\"annual_quantity\"]}]},{\"label\":\"Print\",\"name\":\"print_specs_section\",\"opened\":true,\"columns\":[{\"name\":\"col_print\",\"fields\":[\"num_colors\",\"print_method\",\"coating\"]}]},{\"label\":\"Files & Notes\",\"name\":\"files_notes_section\",\"opened\":true,\"columns\":[{\"name\":\"col_files\",\"fields\":[\"cad_file\",\"print_artwork\",\"spec_notes\"]}]}]"
+  }
+]
