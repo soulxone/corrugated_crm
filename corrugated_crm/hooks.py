@@ -56,6 +56,18 @@ fixtures = [
         "doctype": "Print Format",
         "filters": [["name", "in", ["Corrugated Spec Card - Lead", "Corrugated Spec Card - Deal"]]]
     },
+    # ── Phase 4: Enable track_changes on CRM Lead, CRM Deal, Customer ─────────
+    # Property Setter lets us flip doctype-level properties without editing source
+    {
+        "doctype": "Property Setter",
+        "filters": [
+            ["name", "in", [
+                "CRM Lead-main-track_changes",
+                "CRM Deal-main-track_changes",
+                "Customer-main-track_changes",
+            ]]
+        ]
+    },
 ]
 
 # ── Included in every Frappe Desk page ────────────────────────────────────────

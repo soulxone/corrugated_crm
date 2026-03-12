@@ -1,0 +1,38 @@
+[
+    {
+        "doctype": "Property Setter",
+        "name": "CRM Lead-main-track_changes",
+        "doc_type": "CRM Lead",
+        "doctype_or_field": "DocType",
+        "field_name": null,
+        "property": "track_changes",
+        "property_type": "Check",
+        "value": "1",
+        "module": null,
+        "is_system_generated": 0
+    },
+    {
+        "doctype": "Property Setter",
+        "name": "CRM Deal-main-track_changes",
+        "doc_type": "CRM Deal",
+        "doctype_or_field": "DocType",
+        "field_name": null,
+        "property": "track_changes",
+        "property_type": "Check",
+        "value": "1",
+        "module": null,
+        "is_system_generated": 0
+    },
+    {
+        "doctype": "Property Setter",
+        "name": "Customer-main-track_changes",
+        "doc_type": "Customer",
+        "doctype_or_field": "DocType",
+        "field_name": null,
+        "property": "track_changes",
+        "property_type": "Check",
+        "value": "1",
+        "module": null,
+        "is_system_generated": 0
+    }
+]
