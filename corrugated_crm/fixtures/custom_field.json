@@ -1,0 +1,323 @@
+[
+  {
+    "allow_in_quick_entry": 0,
+    "collapsible": 1,
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "corrugated_section",
+    "fieldtype": "Section Break",
+    "label": "Corrugated Specs",
+    "insert_after": "website",
+    "name": "CRM Lead-corrugated_section"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "box_style",
+    "fieldtype": "Select",
+    "label": "Box Style",
+    "options": "\nRSC\nFOL\nHSC\nBLISS\nROLL\nTELESCOPE\nROLLA\nTRAY\nDIE-CUT\nOTHER",
+    "insert_after": "CRM Lead-corrugated_section",
+    "name": "CRM Lead-box_style"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "flute_type",
+    "fieldtype": "Select",
+    "label": "Flute Type",
+    "options": "\nA (4.7mm)\nB (2.7mm)\nC (3.7mm)\nE (1.5mm)\nF (0.75mm)\nN (0.46mm)\nBC Double\nBE Double\nEB Double\nACB Triple",
+    "insert_after": "CRM Lead-box_style",
+    "name": "CRM Lead-flute_type"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "board_grade",
+    "fieldtype": "Select",
+    "label": "Board Grade / ECT",
+    "options": "\n200# Mullen\n275# Mullen\n350# Mullen\n32-ECT\n44-ECT\n48-ECT\n51-ECT\n61-ECT\n71-ECT",
+    "insert_after": "CRM Lead-flute_type",
+    "name": "CRM Lead-board_grade"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "corrugated_col1",
+    "fieldtype": "Column Break",
+    "insert_after": "CRM Lead-board_grade",
+    "name": "CRM Lead-corrugated_col1"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "box_length",
+    "fieldtype": "Float",
+    "label": "Length (in)",
+    "insert_after": "CRM Lead-corrugated_col1",
+    "name": "CRM Lead-box_length"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "box_width",
+    "fieldtype": "Float",
+    "label": "Width (in)",
+    "insert_after": "CRM Lead-box_length",
+    "name": "CRM Lead-box_width"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "box_depth",
+    "fieldtype": "Float",
+    "label": "Depth (in)",
+    "insert_after": "CRM Lead-box_width",
+    "name": "CRM Lead-box_depth"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "annual_quantity",
+    "fieldtype": "Int",
+    "label": "Annual Quantity",
+    "insert_after": "CRM Lead-box_depth",
+    "name": "CRM Lead-annual_quantity"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "print_section",
+    "fieldtype": "Section Break",
+    "label": "Print Specifications",
+    "insert_after": "CRM Lead-annual_quantity",
+    "name": "CRM Lead-print_section"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "num_colors",
+    "fieldtype": "Select",
+    "label": "# Colors",
+    "options": "\n0 - Unprinted\n1\n2\n3\n4\n4+",
+    "insert_after": "CRM Lead-print_section",
+    "name": "CRM Lead-num_colors"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "print_method",
+    "fieldtype": "Select",
+    "label": "Print Method",
+    "options": "\nFlexographic\nLithographic\nDigital\nPre-print Liner\nCombination",
+    "insert_after": "CRM Lead-num_colors",
+    "name": "CRM Lead-print_method"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "coating",
+    "fieldtype": "Select",
+    "label": "Coating",
+    "options": "\nNone\nAqueous\nUV\nMatte\nGloss",
+    "insert_after": "CRM Lead-print_method",
+    "name": "CRM Lead-coating"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "files_section",
+    "fieldtype": "Section Break",
+    "label": "CAD & Artwork Files",
+    "insert_after": "CRM Lead-coating",
+    "name": "CRM Lead-files_section"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "cad_file",
+    "fieldtype": "Attach",
+    "label": "CAD File",
+    "insert_after": "CRM Lead-files_section",
+    "name": "CRM Lead-cad_file"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "print_artwork",
+    "fieldtype": "Attach",
+    "label": "Print Artwork",
+    "insert_after": "CRM Lead-cad_file",
+    "name": "CRM Lead-print_artwork"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Lead",
+    "fieldname": "spec_notes",
+    "fieldtype": "Small Text",
+    "label": "Spec Notes",
+    "insert_after": "CRM Lead-print_artwork",
+    "name": "CRM Lead-spec_notes"
+  },
+
+  {
+    "allow_in_quick_entry": 0,
+    "collapsible": 1,
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "corrugated_section",
+    "fieldtype": "Section Break",
+    "label": "Corrugated Specs",
+    "insert_after": "website",
+    "name": "CRM Deal-corrugated_section"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "box_style",
+    "fieldtype": "Select",
+    "label": "Box Style",
+    "options": "\nRSC\nFOL\nHSC\nBLISS\nROLL\nTELESCOPE\nROLLA\nTRAY\nDIE-CUT\nOTHER",
+    "insert_after": "CRM Deal-corrugated_section",
+    "name": "CRM Deal-box_style"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "flute_type",
+    "fieldtype": "Select",
+    "label": "Flute Type",
+    "options": "\nA (4.7mm)\nB (2.7mm)\nC (3.7mm)\nE (1.5mm)\nF (0.75mm)\nN (0.46mm)\nBC Double\nBE Double\nEB Double\nACB Triple",
+    "insert_after": "CRM Deal-box_style",
+    "name": "CRM Deal-flute_type"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "board_grade",
+    "fieldtype": "Select",
+    "label": "Board Grade / ECT",
+    "options": "\n200# Mullen\n275# Mullen\n350# Mullen\n32-ECT\n44-ECT\n48-ECT\n51-ECT\n61-ECT\n71-ECT",
+    "insert_after": "CRM Deal-flute_type",
+    "name": "CRM Deal-board_grade"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "corrugated_col1",
+    "fieldtype": "Column Break",
+    "insert_after": "CRM Deal-board_grade",
+    "name": "CRM Deal-corrugated_col1"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "box_length",
+    "fieldtype": "Float",
+    "label": "Length (in)",
+    "insert_after": "CRM Deal-corrugated_col1",
+    "name": "CRM Deal-box_length"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "box_width",
+    "fieldtype": "Float",
+    "label": "Width (in)",
+    "insert_after": "CRM Deal-box_length",
+    "name": "CRM Deal-box_width"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "box_depth",
+    "fieldtype": "Float",
+    "label": "Depth (in)",
+    "insert_after": "CRM Deal-box_width",
+    "name": "CRM Deal-box_depth"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "annual_quantity",
+    "fieldtype": "Int",
+    "label": "Annual Quantity",
+    "insert_after": "CRM Deal-box_depth",
+    "name": "CRM Deal-annual_quantity"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "print_section",
+    "fieldtype": "Section Break",
+    "label": "Print Specifications",
+    "insert_after": "CRM Deal-annual_quantity",
+    "name": "CRM Deal-print_section"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "num_colors",
+    "fieldtype": "Select",
+    "label": "# Colors",
+    "options": "\n0 - Unprinted\n1\n2\n3\n4\n4+",
+    "insert_after": "CRM Deal-print_section",
+    "name": "CRM Deal-num_colors"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "print_method",
+    "fieldtype": "Select",
+    "label": "Print Method",
+    "options": "\nFlexographic\nLithographic\nDigital\nPre-print Liner\nCombination",
+    "insert_after": "CRM Deal-num_colors",
+    "name": "CRM Deal-print_method"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "coating",
+    "fieldtype": "Select",
+    "label": "Coating",
+    "options": "\nNone\nAqueous\nUV\nMatte\nGloss",
+    "insert_after": "CRM Deal-print_method",
+    "name": "CRM Deal-coating"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "files_section",
+    "fieldtype": "Section Break",
+    "label": "CAD & Artwork Files",
+    "insert_after": "CRM Deal-coating",
+    "name": "CRM Deal-files_section"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "cad_file",
+    "fieldtype": "Attach",
+    "label": "CAD File",
+    "insert_after": "CRM Deal-files_section",
+    "name": "CRM Deal-cad_file"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "print_artwork",
+    "fieldtype": "Attach",
+    "label": "Print Artwork",
+    "insert_after": "CRM Deal-cad_file",
+    "name": "CRM Deal-print_artwork"
+  },
+  {
+    "doctype": "Custom Field",
+    "dt": "CRM Deal",
+    "fieldname": "spec_notes",
+    "fieldtype": "Small Text",
+    "label": "Spec Notes",
+    "insert_after": "CRM Deal-print_artwork",
+    "name": "CRM Deal-spec_notes"
+  }
+]
