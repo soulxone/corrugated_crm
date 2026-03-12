@@ -82,7 +82,10 @@ fixtures = [
 ]
 
 # ── Included in every Frappe Desk page ────────────────────────────────────────
-app_include_js = ["/assets/corrugated_crm/js/audit_trail.js"]
+app_include_js = [
+    "/assets/corrugated_crm/js/audit_trail.js",
+    "/assets/corrugated_crm/js/crm_map_button.js",
+]
 
 # ── DocType JS overrides ───────────────────────────────────────────────────────
 # Injects the Estimates child list into CRM Lead and CRM Deal forms
