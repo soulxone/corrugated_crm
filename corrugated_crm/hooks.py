@@ -85,6 +85,7 @@ fixtures = [
 app_include_js = [
     "/assets/corrugated_crm/js/audit_trail.js",
     "/assets/corrugated_crm/js/crm_map_button.js",
+    "/assets/corrugated_crm/js/welch_global_nav.js",  # Phase 7: global Welch nav rail
 ]
 
 # ── DocType JS overrides ───────────────────────────────────────────────────────
