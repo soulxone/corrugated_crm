@@ -282,8 +282,9 @@
 	/* ── Helpers ──────────────────────────────────────────────────────────────── */
 
 	function _is_customer_map() {
-		return /\/desk\/customer-map/.test(window.location.pathname) ||
-		       !!document.getElementById("cm-nav-rail");
+		// URL-only check — #cm-nav-rail persists in DOM after SPA navigation,
+		// so we cannot use it as a reliable indicator of the current page.
+		return /\/desk\/customer-map/.test(window.location.pathname);
 	}
 
 	function _is_desk() {
