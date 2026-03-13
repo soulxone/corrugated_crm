@@ -152,6 +152,16 @@
 						{ label: "Serial No",        href: "/app/serial-no",           icon: "fa-barcode" },
 					],
 				},
+				{
+					heading: "Lexington Inventory Monitor",
+					links: [
+						{ label: "Open Alerts",  href: "/app/inventory-alert?status=Open",           icon: "fa-bell" },
+						{ label: "All Alerts",   href: "/app/inventory-alert",                        icon: "fa-list-alt" },
+						{ label: "New Count",    href: "/app/inventory-count/new-inventory-count-1",  icon: "fa-plus-circle" },
+						{ label: "All Counts",   href: "/app/inventory-count",                        icon: "fa-list-ol" },
+						{ label: "LIM Settings", href: "/app/inventory-monitor-settings",             icon: "fa-sliders" },
+					],
+				},
 			],
 		},
 		{
