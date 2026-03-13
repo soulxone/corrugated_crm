@@ -323,6 +323,11 @@
 	z-index: 1050;
 	overflow: hidden;
 }
+/* Hide when Customer Map is active — Frappe sets body[data-route] synchronously
+   on every page-change, so this is race-condition-free */
+body[data-route="customer-map"] #welch-nav-rail {
+	display: none !important;
+}
 .welch-rail-logo {
 	width: 36px;
 	height: 36px;
@@ -810,20 +815,17 @@
 	/* ── Re-evaluate on Frappe page changes ───────────────────────────────────── */
 
 	function _on_page_change() {
+		// CSS rule body[data-route="customer-map"] #welch-nav-rail { display:none }
+		// handles show/hide automatically — Frappe sets data-route synchronously.
 		setTimeout(() => {
-			if (_is_customer_map()) {
-				// Hide our global rail if customer map injects its own
-				const rail = document.getElementById("welch-nav-rail");
-				if (rail) rail.style.display = "none";
-			} else {
+			_hide_drawer();
+			if (!_is_customer_map()) {
 				const rail = document.getElementById("welch-nav-rail");
 				if (rail) {
-					rail.style.display = "";            // Restore
 					_suppress_frappe_sidebar();
 				} else {
-					_inject();                          // First time on this page type
+					_inject();  // First desk page after hard-reload on customer-map
 				}
-				_hide_drawer();
 			}
 		}, 150);
 	}
@@ -833,10 +835,11 @@
 	function _boot() {
 		_inject();
 
-		// Hook into Frappe's page router
+		// Hook into Frappe's page router (page-change is sufficient;
+		// frappe.router.on("change") fires at the same time but causes
+		// duplicate callbacks with timing that can race the URL update)
 		if (typeof frappe !== "undefined") {
 			$(document).on("page-change", _on_page_change);
-			frappe.router && frappe.router.on && frappe.router.on("change", _on_page_change);
 		}
 	}
 
