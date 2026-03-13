@@ -44,6 +44,14 @@
 						{ label: "Call Logs", href: "/crm/call-logs",icon: "fa-phone" },
 					],
 				},
+				{
+					heading: "Amtech Integration",
+					links: [
+						{ label: "Settings",     href: "/app/amtech-settings",  icon: "fa-plug"        },
+						{ label: "Sync Logs",    href: "/app/amtech-sync-log",  icon: "fa-list-alt"    },
+						{ label: "Deliveries",   href: "/app/delivery-note",    icon: "fa-truck"       },
+					],
+				},
 			],
 		},
 		{
