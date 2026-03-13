@@ -595,6 +595,113 @@ body[data-route="customer-map"] .navbar-fixed-top {
 .welch-acct-item i { width: 14px; color: #7986cb; text-align: center; }
 .welch-acct-item:hover { background: #e8eaf6; color: #1a237e; }
 .welch-acct-divider { border-top: 1px solid #e8eaf6; margin: 4px 0; }
+
+/* ── Mobile Bottom Tab Bar ─────────────────────────────────────────────────── */
+/* Hidden on desktop (rail is used instead). Shown on phones / narrow tablets. */
+#welch-mobile-tab-bar {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 56px;
+	background: #1a237e;
+	z-index: 1040;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: space-around;
+	border-top: 1px solid rgba(255,255,255,.15);
+	/* Safe-area inset for iPhone X+ notch */
+	padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.welch-tab-btn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	background: none;
+	border: none;
+	color: rgba(255,255,255,.6);
+	font-size: 9px;
+	font-family: inherit;
+	cursor: pointer;
+	gap: 3px;
+	/* 44px minimum touch target per iOS HIG */
+	min-height: 44px;
+	padding: 6px 2px;
+	transition: color .15s, background .15s;
+	border-top: 2px solid transparent;
+}
+.welch-tab-btn i { font-size: 18px; line-height: 1; }
+.welch-tab-btn:active,
+.welch-tab-btn.welch-tab-active {
+	color: #fff;
+	border-top-color: #90caf9;
+	background: rgba(255,255,255,.1);
+}
+
+/* ── Mobile: reset desktop layout overrides ───────────────────────────────── */
+@media (max-width: 767px) {
+	/* Hide the desktop left rail */
+	#welch-nav-rail  { display: none !important; }
+	/* Show the mobile bottom tab bar */
+	#welch-mobile-tab-bar { display: flex !important; }
+
+	/* Frappe navbar: full width (no rail on left) */
+	.navbar.frappe-top-bar,
+	.navbar-fixed-top {
+		left: 0 !important;
+		width: 100% !important;
+	}
+	/* Remove the 56px sidebar placeholder */
+	.body-sidebar-placeholder {
+		width: 0 !important;
+		min-width: 0 !important;
+	}
+	/* Push page content above the 56px bottom tab bar */
+	.page-container,
+	.main-section,
+	.container.page-body {
+		padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px)) !important;
+	}
+
+	/* Drawer becomes a bottom sheet on mobile */
+	#welch-nav-drawer {
+		left: 0 !important;
+		right: 0 !important;
+		width: 100% !important;
+		top: auto !important;
+		bottom: 56px !important;
+		height: 72vh;
+		max-height: 72vh;
+		border-radius: 16px 16px 0 0;
+		transform: translateY(110%) !important;
+		transition: transform .25s cubic-bezier(.4,0,.2,1) !important;
+		box-shadow: 0 -4px 24px rgba(0,0,0,.18);
+	}
+	#welch-nav-drawer.welch-drawer-open {
+		transform: translateY(0) !important;
+	}
+	/* Backdrop covers full screen on mobile */
+	#welch-nav-backdrop {
+		left: 0 !important;
+		bottom: 56px !important;
+	}
+	/* Account panel: bottom-left above tab bar */
+	#welch-account-panel {
+		left: 0 !important;
+		bottom: 56px !important;
+		width: 100% !important;
+		border-radius: 16px 16px 0 0 !important;
+	}
+}
+
+/* ── Tablet (768–1023px): keep the rail but widen touch targets ───────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+	#welch-mobile-tab-bar { display: none !important; }
+	.welch-rail-btn { padding: 10px 2px 8px; min-height: 52px; }
+}
 		`;
 		document.head.appendChild(style);
 	}
@@ -644,6 +751,24 @@ body[data-route="customer-map"] .navbar-fixed-top {
 			<div class="welch-drawer-body" id="welch-drawer-body"></div>
 		</div>
 		<div id="welch-nav-backdrop"></div>
+		<!-- Mobile bottom tab bar (hidden on desktop via CSS) -->
+		<div id="welch-mobile-tab-bar">
+			<button class="welch-tab-btn" data-nav="tools" title="Tools">
+				<i class="fa fa-cube"></i><span>Tools</span>
+			</button>
+			<button class="welch-tab-btn" data-nav="crm" title="CRM">
+				<i class="fa fa-briefcase"></i><span>CRM</span>
+			</button>
+			<button class="welch-tab-btn" onclick="window.location='/desk/customer-map'" title="Map">
+				<i class="fa fa-map"></i><span>Map</span>
+			</button>
+			<button class="welch-tab-btn" data-nav="finance" title="Finance">
+				<i class="fa fa-money"></i><span>Finance</span>
+			</button>
+			<button class="welch-tab-btn" data-nav="settings" title="Admin">
+				<i class="fa fa-cog"></i><span>Admin</span>
+			</button>
+		</div>
 		<div id="welch-account-panel">
 			<div class="welch-acct-item" onclick="frappe.ui.toolbar.clear_cache()">
 				<i class="fa fa-refresh"></i> Clear Cache
@@ -678,9 +803,12 @@ body[data-route="customer-map"] .navbar-fixed-top {
 		const group = NAV_GROUPS.find(g => g.id === groupId);
 		if (!group) return;
 
-		// Update active state on rail
+		// Update active state on rail and mobile tab bar
 		document.querySelectorAll(".welch-rail-btn").forEach(b => {
 			b.classList.toggle("welch-rail-active", b.dataset.nav === groupId);
+		});
+		document.querySelectorAll(".welch-tab-btn[data-nav]").forEach(b => {
+			b.classList.toggle("welch-tab-active", b.dataset.nav === groupId);
 		});
 
 		// Build drawer body
@@ -742,6 +870,7 @@ body[data-route="customer-map"] .navbar-fixed-top {
 		if (backdrop)  backdrop.classList.remove("welch-backdrop-open");
 		if (acctPanel) acctPanel.classList.remove("welch-acct-open");
 		document.querySelectorAll(".welch-rail-btn").forEach(b => b.classList.remove("welch-rail-active"));
+		document.querySelectorAll(".welch-tab-btn").forEach(b => b.classList.remove("welch-tab-active"));
 		_activeGroup  = null;
 		_drawerOpen   = false;
 	}
@@ -780,6 +909,25 @@ body[data-route="customer-map"] .navbar-fixed-top {
 					if (acct) acct.classList.remove("welch-acct-open");
 					_show_group(group);
 				}
+			});
+		});
+
+		// Mobile bottom tab buttons — same toggle logic as rail buttons
+		document.querySelectorAll(".welch-tab-btn[data-nav]").forEach(btn => {
+			btn.addEventListener("click", e => {
+				e.stopPropagation();
+				const group = btn.dataset.nav;
+				if (_drawerOpen && _activeGroup === group) {
+					_hide_drawer();
+				} else {
+					const acct = document.getElementById("welch-account-panel");
+					if (acct) acct.classList.remove("welch-acct-open");
+					_show_group(group);
+				}
+				// Update active tab highlight
+				document.querySelectorAll(".welch-tab-btn[data-nav]").forEach(b =>
+					b.classList.toggle("welch-tab-active", b === btn && _drawerOpen)
+				);
 			});
 		});
 
