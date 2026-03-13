@@ -26,8 +26,12 @@
 				{
 					heading: "Corrugated Estimating",
 					links: [
-						{ label: "All Estimates", href: "/app/corrugated-estimate",                        icon: "fa-file-text-o" },
-						{ label: "New Estimate",  href: "/app/corrugated-estimate/new-corrugated-estimate-1", icon: "fa-plus-circle" },
+						{ label: "All Estimates",  href: "/app/corrugated-estimate",                           icon: "fa-file-text-o" },
+						{ label: "New Estimate",   href: "/app/corrugated-estimate/new-corrugated-estimate-1", icon: "fa-plus-circle"  },
+						{ label: "Est. Settings",  href: "/app/corrugated-estimating-settings",                icon: "fa-sliders"      },
+						{ label: "Box Styles",     href: "/app/corrugated-box-style",                          icon: "fa-cube"         },
+						{ label: "Flutes",         href: "/app/corrugated-flute",                              icon: "fa-bars"         },
+						{ label: "Board Grades",   href: "/app/corrugated-board-grade",                        icon: "fa-th-large"     },
 					],
 				},
 				{
@@ -288,8 +292,9 @@
 	}
 
 	function _is_desk() {
-		// Only run on the Frappe desk (not website/CRM SPA etc.)
-		return !!document.querySelector(".body-sidebar-container");
+		// Run on Frappe desk AND on Frappe CRM SPA (/crm/*)
+		return !!document.querySelector(".body-sidebar-container") ||
+			window.location.pathname.startsWith("/crm");
 	}
 
 	/* ── CSS injection ────────────────────────────────────────────────────────── */
@@ -320,13 +325,28 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	z-index: 1050;
+	z-index: 1040;
 	overflow: hidden;
 }
 /* Hide when Customer Map is active — Frappe sets body[data-route] synchronously
    on every page-change, so this is race-condition-free */
 body[data-route="customer-map"] #welch-nav-rail {
 	display: none !important;
+}
+
+/* ── Push Frappe's top navbar past the 56px rail ──────────────────────────── */
+/* Prevents the rail from hiding the app logo / hamburger in the top-left.    */
+.navbar.frappe-top-bar,
+.navbar-fixed-top {
+	left: 56px !important;
+	right: 0 !important;
+	width: auto !important;
+}
+/* Restore full-width navbar when the Customer Map page is shown (no rail)    */
+body[data-route="customer-map"] .navbar.frappe-top-bar,
+body[data-route="customer-map"] .navbar-fixed-top {
+	left: 0 !important;
+	width: 100% !important;
 }
 .welch-rail-logo {
 	width: 36px;
@@ -435,7 +455,7 @@ body[data-route="customer-map"] #welch-nav-rail {
 	bottom: 0;
 	width: 256px;
 	background: #fff;
-	z-index: 1049;
+	z-index: 1039;
 	box-shadow: 4px 0 20px rgba(0,0,0,.16);
 	transform: translateX(-120%);
 	transition: transform .22s cubic-bezier(.4,0,.2,1);
@@ -531,7 +551,7 @@ body[data-route="customer-map"] #welch-nav-rail {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 1048;
+	z-index: 1038;
 	background: rgba(0,0,0,.14);
 	display: none;
 }
@@ -549,7 +569,7 @@ body[data-route="customer-map"] #welch-nav-rail {
 	border: 1px solid #e8eaf6;
 	border-radius: 6px;
 	box-shadow: 4px -4px 16px rgba(0,0,0,.14);
-	z-index: 1050;
+	z-index: 1041;
 	display: none;
 	padding: 8px 0;
 }
