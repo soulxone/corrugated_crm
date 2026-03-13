@@ -1,0 +1,175 @@
+{
+    "doctype": "Workspace",
+    "name": "Welch Tools",
+    "title": "Welch Tools",
+    "module": "Corrugated CRM",
+    "public": 1,
+    "is_standard": 0,
+    "sequence_id": 1,
+    "icon": "fa fa-cube",
+    "charts": [],
+    "shortcuts": [
+        {
+            "color": "Blue",
+            "label": "New Estimate",
+            "link_to": "/app/corrugated-estimate/new-corrugated-estimate-1",
+            "type": "URL"
+        },
+        {
+            "color": "Green",
+            "label": "All Estimates",
+            "link_to": "/app/corrugated-estimate",
+            "type": "URL"
+        },
+        {
+            "color": "Purple",
+            "label": "CRM Leads",
+            "link_to": "/crm/leads",
+            "type": "URL"
+        },
+        {
+            "color": "Orange",
+            "label": "CRM Deals",
+            "link_to": "/crm/deals",
+            "type": "URL"
+        },
+        {
+            "color": "Red",
+            "label": "Customer Map",
+            "link_to": "/desk/customer-map",
+            "type": "URL"
+        },
+        {
+            "color": "Grey",
+            "label": "Amtech Settings",
+            "link_to": "/app/amtech-settings",
+            "type": "URL"
+        }
+    ],
+    "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Corrugated Estimating\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"CRM & Sales\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Inventory & Operations\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Amtech Integration\",\"col\":4}}]",
+    "cards": [
+        {"label": "Corrugated Estimating", "hidden": 0},
+        {"label": "CRM & Sales", "hidden": 0},
+        {"label": "Inventory & Operations", "hidden": 0},
+        {"label": "Amtech Integration", "hidden": 0}
+    ],
+    "links": [
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Corrugated Estimate",
+            "link_to": "Corrugated Estimate",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Box Styles",
+            "link_to": "Corrugated Box Style",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Flutes",
+            "link_to": "Corrugated Flute",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Board Grades",
+            "link_to": "Corrugated Board Grade",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Estimating Settings",
+            "link_to": "Corrugated Estimating Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Customer",
+            "link_to": "Customer",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Sales Order",
+            "link_to": "Sales Order",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Delivery Note",
+            "link_to": "Delivery Note",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Item",
+            "link_to": "Item",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Stock Entry",
+            "link_to": "Stock Entry",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Job Card",
+            "link_to": "Job Card",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Amtech Settings",
+            "link_to": "Amtech Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Amtech Sync Log",
+            "link_to": "Amtech Sync Log",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        }
+    ]
+}

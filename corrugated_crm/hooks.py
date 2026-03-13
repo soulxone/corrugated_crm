@@ -79,6 +79,11 @@ fixtures = [
             ]]
         ]
     },
+    # ── Workspaces: Welch Tools hub desk page ─────────────────────────────────
+    {
+        "doctype": "Workspace",
+        "filters": [["name", "in", ["Welch Tools"]]]
+    },
 ]
 
 # ── Included in every Frappe Desk page ────────────────────────────────────────
